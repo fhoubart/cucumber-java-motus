@@ -52,6 +52,18 @@ public class StepDefinitions {
     @Then("le joueur a gagne")
     public void le_joueur_a_gagne() {
         // Write code here that turns the phrase above into concrete actions
-        assertTrue(this.app.aGagner());
+        assertTrue(this.app.aGagne());
+    }
+
+    @Then("le joueur n'a pas gagne")
+    public void le_joueur_n_a_pas_gagne() {
+        // Write code here that turns the phrase above into concrete actions
+        assertFalse(this.app.aGagne());
+    }
+
+    @Then("la case {int} est {string}")
+    public void la_case_est(Integer caseNo, String couleur) {
+        // Write code here that turns the phrase above into concrete actions
+        assert(this.app.getCase(caseNo).getCouleur().equals(couleur));
     }
 }
